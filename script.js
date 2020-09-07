@@ -55,10 +55,15 @@ const createBox = (model) => {
 }
 
 
-function removeEntity(){  
+function removeEntity() {
+    const entity = document.querySelector('a-entity[gltf-model]');
+    if (entity)
+        entity.parentNode.removeChild(entity);
 }
-function addEntity(){  
-    const entity = createEntity(entityModel);
-    const scene = document.querySelector('a-scene');
-    scene.appendChild(entity);
+function addEntity() {
+    if (!document.querySelector('a-entity[gltf-model]')) {
+        const entity = createEntity(entityModel);
+        const scene = document.querySelector('a-scene');
+        scene.appendChild(entity);
+    }
 }
