@@ -50,7 +50,7 @@ function addEntity() {
     }
 }
 
-let isArWorld = true;
+let isArWorld = false;
 function AFrame(){
     if (!isArWorld)
         return;
@@ -62,10 +62,10 @@ function AFrame(){
     scene.setAttribute('fog', 'type: linear; color: #AAA; far: 30; near: 0')
     // scene.setAttribute('animation__fog', 'property: fog.color; to: #000; dur: 2000')
     scene.setAttribute('background', 'color: #007FFF')
-    const camera = document.querySelector('a-camera')
-    if (camera) {
-        camera.parentNode.removeChild(camera);
-        camera.destroy();
+    const cameraToRemove = document.querySelector('a-camera')
+    if (cameraToRemove) {
+        cameraToRemove.parentNode.removeChild(cameraToRemove);
+        cameraToRemove.destroy();
     }
     document.querySelectorAll('a-entity').forEach(e => {
         e.parentNode.removeChild(e);
@@ -100,10 +100,10 @@ function ARjs(){
     scene.removeAttribute('fog');
     scene.removeAttribute('background');
     scene.setAttribute('arjs-webcam-texture', '');
-    const camera = document.querySelector('a-camera')
-    if (camera) {
-        camera.parentNode.removeChild(camera);
-        camera.destroy();
+    const cameraToRemove = document.querySelector('a-camera')
+    if (cameraToRemove) {
+        cameraToRemove.parentNode.removeChild(cameraToRemove);
+        cameraToRemove.destroy();
     }
 
     document.querySelectorAll('a-entity').forEach(e => {
