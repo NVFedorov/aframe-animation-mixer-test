@@ -59,9 +59,6 @@ function AFrame(){
     // clearInterval(interval);
     const scene = document.querySelector('a-scene')
     scene.removeAttribute('arjs-webcam-texture');
-    // scene.setAttribute('fog', 'type: linear; color: #AAA; far: 30; near: 0')
-    // scene.setAttribute('animation__fog', 'property: fog.color; to: #000; dur: 2000')
-    // scene.setAttribute('background', 'color: #007FFF')
     const cameraToRemove = document.querySelector('a-camera')
     if (cameraToRemove) {
         cameraToRemove.parentNode.removeChild(cameraToRemove);
@@ -79,13 +76,6 @@ function AFrame(){
     camera.appendChild(cursor);
     scene.appendChild(camera);
 
-    // const plane = document.createElement('a-plane');
-    // plane.setAttribute('position', '0 0 0');
-    // plane.setAttribute('rotation', '-90 0 0');
-    // plane.setAttribute('width', '100');
-    // plane.setAttribute('height', '100');
-    // plane.setAttribute('color', '#7BC8A4');
-    // scene.appendChild(plane);
     const env = document.createElement('a-entity');
     env.setAttribute('environment', 'preset: forest; dressingAmount: 500');
     scene.appendChild(env);
@@ -122,6 +112,16 @@ function ARjs(){
     camera.setAttribute('rotation-reader', '');
     camera.setAttribute("gps-camera", "");
     scene.appendChild(camera);
+
+    const ambient = document.createElement('a-entity');
+    ambient.setAttribute('light', 'type: ambient; color: #BBB');
+    const directional = document.createElement('a-entity');
+    directional.setAttribute('light', 'type: directional; color: #FFF; intensity: 0.6');
+    directional.setAttribute('position', '-0.5 1 1');
+    scene.appendChild(ambient);
+    scene.appendChild(directional);
+
     scene.appendChild(createEntity(entityModel));
+    
     scene.render();
 }
