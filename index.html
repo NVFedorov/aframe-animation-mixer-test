@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Hello, WebVR! • A-Frame</title>
+    <meta name="description" content="Hello, WebVR! • A-Frame">
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="https://raw.githubusercontent.com/donmccurdy-up-for-adoption/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+    </a-scene>
+    <button style="position: fixed; left:0;top:0;z-index:999999" onclick="addEntity()">
+      Add
+    </button>
+    <button style="position: fixed; left:0;top:20px;z-index:999999" onclick="removeEntity()">
+      Remove
+    </button>
+    <script type="text/javascript" src="./script.js"></script>
+    <script>
+      window.onload = function(){
+        createScene();
+      }
+    </script>
+  </body>
+</html>
