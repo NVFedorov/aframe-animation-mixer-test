@@ -34,7 +34,7 @@ const createScene = () => {
     scene.appendChild(plane);
 }
 const createEntity = (model) => {
-    let entity = document.createElement('a-box');
+    let entity = document.createElement('a-entity');
     entity.setAttribute('scale', model.scale);
     entity.setAttribute('rotation', model.rotation);
     entity.setAttribute('position', model.position);
