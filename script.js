@@ -7,7 +7,7 @@ const box = {
 }
 
 const entityModel = {
-    url: "./assets/creatures/articuno/scene.gltf",
+    url: "./assets/articuno/scene.gltf",
     position: "0 0 -5",
     rotation: "0 0 0",
     scale: "0.05 0.05 0.05"
